@@ -4,8 +4,8 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/architecture", label: "Architecture" },
   { to: "/my-impact", label: "My Impact" },
+  { to: "/architecture", label: "Architecture" }
 ];
 
 export default function Navbar() {

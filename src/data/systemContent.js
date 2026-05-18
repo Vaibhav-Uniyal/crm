@@ -351,74 +351,150 @@ export const myImpact = {
   label: "My contribution",
   title: "Impact, Testing & Outcomes",
   subtitle:
-    "Key deliverables focusing on ground truth robustness, prompt optimization, and rigorous flow testing to ensure enterprise-grade reliability.",
-  
+    "Measurable engineering impact driven by expanded API coverage, complex intent pipelines, and zero-downtime deployment strategies to ensure enterprise-grade reliability.",
+
   stats: [
-    { value: "Ground Truth", label: "Dataset optimization", sub: "Built robust test sets" },
-    { value: "Prompts", label: "Iterative testing", sub: "High accuracy consensus" },
-    { value: "10+", label: "Test flows", sub: "Rigorous branch validation" },
-    { value: "Metrics", label: "Measurable impact", sub: "Clear month-over-month growth" },
+    { value: "+10%", label: "Auto-closure" },
+    { value: "+50%", label: "NFTR Assistance" },
+    { value: "7+", label: "New Intents" },
+    { value: "Hourly Logs", label: "Real-time Monitoring" },
+  ],
+
+  problemsBefore: [
+    {
+      title: "Low Intent Identification Rate",
+      text: "The system struggled to accurately identify the customer's intent from raw email text, leading to frequent misrouting and manual fallbacks.",
+      tone: "coral",
+      icon: "TrendingDown"
+    },
+    {
+      title: "Low Auto-closure Percentage",
+      text: "Due to missing API coverage and incomplete end-to-end automation logic, the majority of tickets required an agent to manually review and close.",
+      tone: "amber",
+      icon: "XCircle"
+    },
+    {
+      title: "Low NFTR Rate",
+      text: "Net First Time Resolution was suboptimal because the pipeline frequently failed to extract all necessary structured data on the initial interaction.",
+      tone: "purple",
+      icon: "AlertTriangle"
+    },
+    {
+      title: "Lack of Error Logs & Monitoring",
+      text: "With no robust error tracking or proactive queue monitoring, debugging failures was reactive and time-consuming, affecting SLA response times.",
+      tone: "blue",
+      icon: "SearchX"
+    },
+    {
+      title: "Security & Deployment Bottlenecks",
+      text: "System secrets were previously exposed, and even minor disposition updates required prolonged, full-system deployments.",
+      tone: "coral",
+      icon: "ShieldAlert"
+    },
+    {
+      title: "Manual & Time-Intensive Testing",
+      text: "Testing new routing logic and intents relied heavily on manual, time-consuming methods, slowing down release cycles and increasing regression risks.",
+      tone: "purple",
+      icon: "Beaker"
+    }
   ],
 
   detailedImpacts: [
     {
-      title: "Prompt Engineering & Ground Truth Optimization",
-      text: "Iteratively refined classification prompts and established robust ground truth datasets to help the model better understand email summaries. This drastically reduced misclassification rates and improved overall AI consensus reliability.",
-      percentage: "+15%",
-      metricLabel: "Accuracy increase",
-      tone: "green",
-      image: "/assets/metrices/Feb.png",
-      imageCaption: "February Accuracy vs January baseline"
-    },
-    {
-      title: "Portal Issues Pipeline Creation",
-      text: "Engineered an entirely new automation pipeline dedicated to handling 'portal issues'. This included error fixing in ticket processing and runtime calculations, directly increasing the system's accuracy by 5-10%.",
-      percentage: "+8%",
-      metricLabel: "Portal processing accuracy",
+      sectionHeading: "Solutions for Auto-Closure & NFTR Assistance",
+      title: "Dedicated 'Portal Issues' Pipeline",
+      text: "Designed and launched a specialized automation pipeline for high-volume 'Portal Issues'. By resolving ticket processing bugs and optimizing runtime calculations, we drastically reduced agent escalations, accelerating turnaround times and driving significant operational cost savings.",
+
+      metricLabel: "Auto-resolution for portal issues",
       tone: "purple",
       image: "/assets/metrices/feb_portal_effect.png",
-      imageCaption: "Impact of portal routing updates"
+      imageCaption: "Business impact of portal routing updates",
+      extraMetrics: [
+        { value: "+8%", label: "Auto-Closure\nIncrease" },
+        { value: "+50%", label: "NFTR\nAuto-Closure" }
+      ]
     },
     {
-      title: "Claim & Branch Details Integration",
-      text: "Engineered the complete automation logic and pipeline integration for handling 'claim' and 'branch details' intents, significantly minimizing manual fallback rates for these specific queries.",
-      percentage: "-22%",
-      metricLabel: "Reduction in manual triage",
+      title: "Claim Intents",
+      text: "Engineered the complete automation logic and pipeline integration for multiple new claim intents, including 'Original Document Return Request', 'Remaining Document Submission Request', and 'Vidal Branch Details'. This minimized manual fallbacks and expanded overall automation coverage.",
+      metricLabel: "Claim Flows Auto-resolution",
       tone: "blue",
       image: "/assets/metrices/feb_claim.png",
-      imageCaption: "Claim automation success rate (Feb)"
+      imageCaption: "Claim automation success rate (Feb)",
+      extraMetrics: [
+        { value: "+3%", label: "Total\nAutoclosure" },
+        { value: "+4%", label: "Claims\nAutoclosure" }
+      ]
     },
     {
-      title: "Complex Preauth & Deduction Flows",
-      text: "Developed sophisticated new intent flows, including 'Preauth Clarification Deduction'. This involved writing logic to cross-reference approved preauths with Vings data over a 7-day expectation to summarize remaining deductions.",
-      percentage: "New",
-      metricLabel: "Feature Delivery",
+      title: "Preauth Intents",
+      text: "Developed sophisticated new intent flows including 'Preauth Rejected Reconsideration', 'Deduction Reconsideration', and 'Preauth Deduction Clarification'. This involved writing complex logic to cross-reference approved preauths with internal Vings data over a 7-day expectation window to accurately summarize remaining deductions.",
+      metricLabel: "Preauth Automation",
       tone: "amber",
-      image: null
+      image: ["/assets/metrices/preauth_1.png", "/assets/metrices/preauth_2.png"],
+      imageCaption: "Preauth Automation Impact",
+      extraMetrics: [
+        { value: "+2%", label: "Total\nAutoclosure" },
+        { value: "+5%", label: "Preauth\nAutoclosure" },
+        { value: "+2%", label: "Total NFTR\nAutoclosure" }
+      ]
     },
     {
-      title: "Document Returns & Rejection Intents",
-      text: "Designed and implemented multiple new conversational flows, including a dedicated intent for 'Original Documents Return Request' and handling 'Rejection' scenarios.",
-      percentage: "New",
-      metricLabel: "Intent Expansion",
+      title: "Escalation Fixes & System Upgrades",
+      text: "Identified and resolved critical escalation bugs and deployed a series of miscellaneous system upgrades to streamline edge-case handling. This comprehensive stabilization effort directly contributed to a further increase in overall system automation.",
+      metricLabel: "System Stabilization",
       tone: "coral",
-      image: null
+      image: null,
+      extraMetrics: [
+        { value: "+2%", label: "Total Autoclosure" }
+      ]
     },
     {
-      title: "API Timing & Security Enhancements",
-      text: "Analyzed API timing calls across the system, optimized database interactions for single-ticket runtime, migrated system secrets to MongoDB, and updated cron monitoring for 30-minute STP response thresholds.",
-      percentage: "Opt",
-      metricLabel: "System Performance",
-      tone: "green",
-      image: null
-    },
-    {
-      title: "Enhanced Reporting & Queue Monitoring Efficiency",
-      text: "Optimized automated reporting deployments and queue monitoring processes to deliver faster insights and smoother issue resolution.",
-      percentage: "TBD",
-      metricLabel: "Reporting Efficiency",
+      sectionHeading: "Solutions for Testing, Security & Error Logging",
+      layout: "stress_test",
+      title: "Testing Branches for Kafka & Production Cases",
+      text: "Created dedicated testing branches for Kafka and Salesforce load testing to evaluate load balancing and system stability under heavy concurrent processing.",
+      scenario: "Simulated 80,000 ticket events to validate load distribution across Kafka and Salesforce integrations.",
+      tags: ["Kafka Streams", "Load Balancing", "Salesforce API", "Concurrency Testing", "Production Simulation"],
+      keyFinding: "Kafka can handle 80,000 events concurrently, while Salesforce API maintains stability up to 10,000 events.",
+      metricLabel: "System Stress Testing",
       tone: "purple",
-      image: null
+      results: [
+        { name: "Kafka", label: "Load Capacity", value: "80,000", max: 80000, actual: 80000, color: "#b69cf8", statusText: "Successfully processed 80,000 concurrent tickets", statusColor: "#22c55e", icon: "kafka" },
+        { name: "Salesforce", label: "Load Capacity", value: "10,000", max: 80000, actual: 10000, color: "#3b82f6", statusText: "API limits allow processing of 10,000 tickets at once", statusColor: "#f97316", icon: "salesforce" }
+      ]
+    },
+    {
+      layout: "automated_testing",
+      title: "Dedicated Production Case Testing Branch",
+      text: "Built a dedicated testing branch capable of automatically executing production-like testing scenarios using real support cases and attachments.",
+      scenario: "The system automatically fetches production case details, attachments, metadata, and workflow context using only a case number. It then creates a UAT case and executes the complete testing flow without requiring repeated manual email coordination.",
+      keyFinding: "Testing new intents now only need a case number to execute complete end-to-end validation flows automatically, eliminating repetitive email coordination and manual setup work.",
+      metricLabel: "Automated Testing Workflow",
+      tone: "blue",
+
+      results: [
+        { value: "100%", label: "Manual Testing Effort Reduced", icon: "trending", color: "#22c55e", statusText: "Significant improvement in productivity" },
+        { value: "1 Case ID", label: "Required To Execute Full Flow", icon: "document", color: "#3b82f6", statusText: "All details fetched automatically" },
+        { value: "Auto", label: "Case Fetching & UAT Generation", icon: "zap", color: "#a855f7", statusText: "End-to-end flow executed automatically" }
+      ],
+      workflowSteps: [
+        { text: "Fetch Case Details", icon: "file" },
+        { text: "Sync Attachments", icon: "paperclip" },
+        { text: "Create UAT Case", icon: "plus" },
+        { text: "Execute Flow", icon: "play" }
+      ]
+    },
+    {
+      layout: "reporting_dashboard",
+      title: "Automated Reporting & Error Monitoring Infrastructure",
+      text: "Built centralized monitoring and reporting systems for operational visibility, SLA tracking, and queue health management.",
+      images: {
+        hourly: "/assets/reports/hourly_overview.png",
+        daily: "/assets/reports/tpa_metrics.png",
+        delayed: "/assets/reports/delayed_tickets.png",
+        scoped: "/assets/reports/bot_cannot_handle.png"
+      }
     }
   ],
 };

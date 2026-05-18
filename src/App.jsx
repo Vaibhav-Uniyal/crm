@@ -10,8 +10,8 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/architecture" element={<ArchitecturePage />} />
         <Route path="/my-impact" element={<MyImpactPage />} />
+        <Route path="/architecture" element={<ArchitecturePage />} />
       </Routes>
     </BrowserRouter>
   );
