@@ -485,16 +485,54 @@ export const myImpact = {
         { text: "Execute Flow", icon: "play" }
       ]
     },
+        {
+      layout: "platform_security",
+      metricLabel: "Platform Security",
+      title: "Azure Key Vault & Dynamic Runtime Configs",
+      text: "Centralized sensitive secrets using Azure Key Vault and migrated refresh configurations to MongoDB-driven runtime updates to eliminate deployment dependency and reduce configuration propagation delays.",
+      features: [
+        {
+          title: "Azure Key Vault",
+          text: "Moved API secrets, credentials, and environment configurations to Azure Key Vault for secure centralized runtime access.",
+          icon: "Lock",
+        },
+        {
+          title: "MongoDB Runtime Configs",
+          text: "Enabled near real-time disposition updates by shifting refresh configurations to MongoDB runtime synchronization.",
+          icon: "Database",
+        }
+      ],
+      tags: [
+        "Secrets Encryption",
+        "Runtime Sync",
+        "MongoDB Configs",
+        "Zero Hardcoded Secrets",
+        "Real-time Refresh"
+      ],
+      metrics: [
+        {
+          value: "25 min",
+          secondary: "3 min",
+          label: "Configuration Refresh Optimization",
+          icon: "Clock",
+        },
+        {
+          value: "100%",
+          secondary: "Centralized Secrets",
+          label: "Azure Key Vault Migration",
+          icon: "Shield",
+        }
+      ]
+    },
     {
       layout: "reporting_dashboard",
-      title: "Automated Reporting & Error Monitoring Infrastructure",
-      text: "Built centralized monitoring and reporting systems for operational visibility, SLA tracking, and queue health management.",
+      sectionHeading: "Automated Reporting & Error Monitoring",
       images: {
         hourly: "/assets/reports/hourly_overview.png",
         daily: "/assets/reports/tpa_metrics.png",
         delayed: "/assets/reports/delayed_tickets.png",
         scoped: "/assets/reports/bot_cannot_handle.png"
       }
-    }
+    },
   ],
 };

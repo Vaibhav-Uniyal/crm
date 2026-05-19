@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText, X, CheckCircle2, Zap, Shield, GitBranch, TrendingDown, XCircle, AlertTriangle, SearchX, ArrowDown, ShieldAlert, Beaker, ChevronLeft, ChevronRight, Lightbulb, Info, Network, Cloud, Box, Activity, Scale, Bot, Monitor, Users, TrendingUp, BarChart2, Image as ImageIcon, Paperclip, Plus, Play, Rocket, Clock, Calendar, BellRing, Bell } from "lucide-react";
+import { FileText, X, CheckCircle2, Zap, Shield, GitBranch, TrendingDown, XCircle, AlertTriangle, SearchX, ArrowDown, ShieldAlert, Beaker, ChevronLeft, ChevronRight, Lightbulb, Info, Network, Cloud, Box, Activity, Scale, Bot, Monitor, Users, TrendingUp, BarChart2, Image as ImageIcon, Paperclip, Plus, Play, Rocket, Clock, Calendar, BellRing, Bell, Database, Lock, RefreshCw } from "lucide-react";
 import { Section } from "../components/presentation/Section";
 import { myImpact } from "../data/systemContent";
 
@@ -530,8 +530,7 @@ export default function MyImpactPage() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-8 rounded-3xl overflow-hidden relative shadow-2xl p-6 md:p-10"
-                    style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.05)' }}
+                    className="mt-8 relative"
                   >
                     {/* TITLE SECTION */}
                     <div className="text-center mb-10 relative z-10">
@@ -543,9 +542,9 @@ export default function MyImpactPage() {
                       </p>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-6 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6 relative z-10 items-start">
                       {/* LEFT PANEL */}
-                      <div className="lg:w-[55%] flex flex-col p-6 rounded-2xl bg-[#0a0a12] border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)] relative overflow-hidden group">
+                      <div className="flex flex-col p-6 rounded-2xl bg-[#0a0a12] border border-purple-500/20 shadow-[0_0_30px_rgba(168,85,247,0.1)] relative overflow-hidden group h-fit">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-blue-500 opacity-70" />
                         
                         <div className="flex gap-4 items-start mb-6">
@@ -585,7 +584,7 @@ export default function MyImpactPage() {
                               </div>
                               <div>
                                 <div className="text-[10px] text-gray-400 font-medium mb-0.5">Auto Closed</div>
-                                <div className="text-sm font-bold text-green-400 tracking-wide">69 <span className="text-xs opacity-80">(22.8%)</span></div>
+                                <div className="text-sm font-bold text-green-400 tracking-wide">69 <span className="text-xs opacity-80">(63.9%)</span></div>
                               </div>
                             </div>
                             <div className="flex-1 min-w-[130px] bg-[#0d0d12] border border-white/5 rounded-xl p-3 flex gap-3 items-center shadow-lg">
@@ -673,9 +672,9 @@ export default function MyImpactPage() {
                       </div>
 
                       {/* RIGHT PANELS */}
-                      <div className="lg:w-[45%] flex flex-col gap-6">
+                      <div className="flex flex-col gap-6 h-fit">
                         {/* Delayed Queue */}
-                        <div className="flex-[3] p-6 rounded-2xl bg-[#140505] border border-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.1)] relative overflow-hidden group flex flex-col">
+                        <div className="p-6 rounded-2xl bg-[#140505] border border-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.1)] relative overflow-hidden group flex flex-col h-fit">
                           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-orange-500 opacity-70" />
                           <div className="absolute right-0 top-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] pointer-events-none" />
 
@@ -692,7 +691,7 @@ export default function MyImpactPage() {
                           </div>
                           
                           <div 
-                            className="rounded-xl overflow-hidden border border-red-500/30 shadow-[0_0_25px_rgba(239,68,68,0.15)] relative z-10 flex-1 flex items-center justify-center bg-black/40 p-2 cursor-pointer hover:ring-2 hover:ring-red-500/50 transition-all"
+                            className="rounded-xl overflow-hidden border border-red-500/30 shadow-[0_0_25px_rgba(239,68,68,0.15)] relative z-10 flex items-center justify-center bg-black/40 p-2 cursor-pointer hover:ring-2 hover:ring-red-500/50 transition-all"
                             onClick={() => setSelectedImage({
                                images: [impact.images.delayed],
                                captions: ["Delayed Queue Alert Dashboard"],
@@ -730,7 +729,7 @@ export default function MyImpactPage() {
                         </div>
 
                         {/* Scoped Ticket Error */}
-                        <div className="flex-[2] p-6 rounded-2xl bg-[#140a05] border border-orange-500/20 shadow-[0_0_30px_rgba(249,115,22,0.1)] relative overflow-hidden group flex flex-col">
+                        <div className="p-6 rounded-2xl bg-[#140a05] border border-orange-500/20 shadow-[0_0_30px_rgba(249,115,22,0.1)] relative overflow-hidden group flex flex-col h-fit">
                           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-yellow-500 opacity-70" />
                           <div className="absolute right-0 top-0 w-64 h-64 bg-orange-500/5 rounded-full blur-[80px] pointer-events-none" />
 
@@ -747,7 +746,7 @@ export default function MyImpactPage() {
                           </div>
                           
                           <div 
-                            className="rounded-xl overflow-hidden border border-orange-500/30 shadow-[0_0_25px_rgba(249,115,22,0.15)] relative z-10 flex-1 flex items-center justify-center bg-black/40 p-2 cursor-pointer hover:ring-2 hover:ring-orange-500/50 transition-all"
+                            className="rounded-xl overflow-hidden border border-orange-500/30 shadow-[0_0_25px_rgba(249,115,22,0.15)] relative z-10 flex items-center justify-center bg-black/40 p-2 cursor-pointer hover:ring-2 hover:ring-orange-500/50 transition-all"
                             onClick={() => setSelectedImage({
                                images: [impact.images.scoped],
                                captions: ["Scoped Ticket Error Logs"],
@@ -805,6 +804,143 @@ export default function MyImpactPage() {
                           <Shield className="w-5 h-5 text-blue-400 opacity-80" />
                           <span className="text-[10px] text-gray-400 font-semibold w-16 md:w-20 text-center leading-tight">Proactive SLA Breach</span>
                         </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ) : impact.layout === 'platform_security' ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    className="mt-8 rounded-[28px] overflow-hidden relative shadow-2xl"
+                    style={{
+                      background: '#050505',
+                      border: '1px solid rgba(45, 212, 191, 0.22)',
+                      boxShadow: '0 30px 90px -30px rgba(16, 185, 129, 0.28), 0 0 0 1px rgba(34, 211, 238, 0.08) inset'
+                    }}
+                  >
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                      <div className="absolute -top-24 left-0 w-96 h-96 rounded-full blur-[110px] bg-emerald-500/12" />
+                      <div className="absolute top-8 right-[-60px] w-80 h-80 rounded-full blur-[120px] bg-cyan-500/10" />
+                      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)', backgroundSize: '72px 72px' }} />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.12),transparent_30%),radial-gradient(circle_at_80%_15%,rgba(34,211,238,0.1),transparent_25%),radial-gradient(circle_at_50%_80%,rgba(16,185,129,0.06),transparent_28%)]" />
+                    </div>
+
+                    <div className="relative z-10 p-6 md:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-[minmax(0,1.25fr)_minmax(330px,0.75fr)] gap-6 lg:gap-8 items-start">
+                      <div className="flex flex-col justify-center space-y-5">
+                        <div className="inline-flex items-center gap-2 self-start px-4 py-2 rounded-full text-[11px] font-bold tracking-[0.24em] uppercase border border-emerald-400/30 bg-emerald-400/10 text-emerald-300 shadow-[0_0_22px_rgba(16,185,129,0.18)]">
+                          <Shield className="w-3.5 h-3.5" />
+                          {impact.metricLabel || "Platform Security"}
+                        </div>
+
+                        <div className="space-y-4 max-w-[680px]">
+                          <h2 className="text-4xl font-bold tracking-tight leading-tight" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                            <span className="block text-white">{impact.title?.split('&')[0]?.trim() || "Azure Key Vault"}</span>
+                            <span className="block bg-gradient-to-r from-emerald-300 via-emerald-400 to-cyan-300 bg-clip-text text-transparent">
+                              {impact.title?.split('&')[1]?.trim() || "Dynamic Runtime Configs"}
+                            </span>
+                          </h2>
+                          <p className="text-[15px] md:text-[16px] leading-relaxed text-slate-300/80 max-w-[620px]">
+                            {impact.text}
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                          {(impact.features || []).map((feature, index) => {
+                            const FeatureIcon = feature.icon === "Database" ? Database : Lock;
+                            const isBlue = index === 0;
+
+                            return (
+                              <div key={feature.title} className={`group relative overflow-hidden rounded-3xl border ${isBlue ? 'bg-gradient-to-br from-sky-400/24 via-sky-500/12 to-cyan-500/8 border-cyan-400/20 shadow-[0_0_24px_rgba(34,211,238,0.1)]' : 'bg-gradient-to-br from-emerald-400/20 via-emerald-500/10 to-teal-500/8 border-emerald-400/20 shadow-[0_0_24px_rgba(16,185,129,0.1)]'} backdrop-blur-xl p-4`}>
+                                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_32%)] opacity-70" />
+                                <div className="relative flex gap-4 items-start">
+                                  <div className="relative shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-white/10 bg-black/35 backdrop-blur-md flex items-center justify-center overflow-hidden">
+                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_55%)]" />
+                                    <div className={`absolute inset-3 rounded-2xl ${isBlue ? 'bg-cyan-500/10' : 'bg-emerald-500/10'} blur-md`} />
+                                    <div className="relative z-10 flex flex-col items-center justify-center gap-1">
+                                      <div className={`w-12 h-12 rounded-2xl border border-white/10 bg-black/40 flex items-center justify-center ${isBlue ? 'text-cyan-300' : 'text-emerald-300'}`}>
+                                        <FeatureIcon className="w-6 h-6" />
+                                      </div>
+                                      <div className={`h-1.5 w-16 rounded-full ${isBlue ? 'bg-cyan-400/50' : 'bg-emerald-400/50'} blur-[1px]`} />
+                                    </div>
+                                  </div>
+
+                                  <div className="min-w-0 flex-1 space-y-1.5 pt-0.5">
+                                    <h4 className={`text-lg md:text-xl font-bold ${isBlue ? 'text-cyan-200' : 'text-emerald-200'} leading-tight`}>
+                                      {feature.title}
+                                    </h4>
+                                    <p className="text-sm md:text-[14px] text-slate-300/78 leading-relaxed max-w-[24rem]">
+                                      {feature.text}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-4 lg:pt-3">
+                        {(impact.metrics || []).map((panel, index) => {
+                          const PanelIcon = index === 0 ? Clock : Shield;
+                          const isEmerald = index === 0;
+
+                          return (
+                            <div
+                              key={panel.label}
+                              className={`relative overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,10,0.92),rgba(7,7,7,0.82))] ${isEmerald ? 'shadow-[0_0_32px_rgba(16,185,129,0.18)]' : 'shadow-[0_0_32px_rgba(34,211,238,0.18)]'} backdrop-blur-2xl p-5 md:p-6 min-h-[206px] flex flex-col justify-between`}
+                            >
+                              <div className={`absolute inset-0 opacity-80 ${isEmerald ? 'bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.18),transparent_35%),radial-gradient(circle_at_80%_90%,rgba(16,185,129,0.12),transparent_28%)]' : 'bg-[radial-gradient(circle_at_28%_22%,rgba(34,211,238,0.18),transparent_35%),radial-gradient(circle_at_82%_88%,rgba(34,211,238,0.12),transparent_28%)]'}`} />
+                              <div className={`absolute top-0 left-0 right-0 h-px ${isEmerald ? 'bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent' : 'bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent'}`} />
+
+                              <div className="relative z-10 flex items-start justify-between gap-4 min-h-[132px]">
+                                <div className={`w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center bg-black/35 ${isEmerald ? 'text-emerald-300 shadow-[0_0_24px_rgba(16,185,129,0.16)]' : 'text-cyan-300 shadow-[0_0_24px_rgba(34,211,238,0.16)]'}`}>
+                                  <PanelIcon className="w-7 h-7" />
+                                </div>
+
+                                {index === 0 ? (
+                                  <div className="text-right space-y-1">
+                                    <div className="text-[clamp(2.05rem,3.2vw,2.95rem)] leading-none font-black text-white tracking-tight" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                      {panel.value}
+                                    </div>
+                                    <ArrowDown className={`w-6 h-6 mx-auto ${isEmerald ? 'text-emerald-300' : 'text-cyan-300'}`} />
+                                    <div className={`text-[clamp(1.7rem,2.7vw,2.45rem)] leading-none font-black ${isEmerald ? 'text-emerald-300' : 'text-cyan-300'}`} style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                      {panel.secondary}
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <div className="text-right space-y-1">
+                                    <div className="text-[clamp(2.1rem,3.4vw,3.1rem)] leading-none font-black text-white tracking-tight" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                      {panel.value}
+                                    </div>
+                                    <div className={`whitespace-pre-line text-[clamp(1.55rem,2.5vw,2.3rem)] leading-none font-black ${isEmerald ? 'text-emerald-300' : 'text-cyan-300'}`} style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                      {panel.secondary}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="relative z-10 pt-4 mt-4 border-t border-white/10">
+                                <p className="text-[13px] md:text-sm text-slate-200/80 leading-relaxed">
+                                  {panel.label}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      <div className="flex flex-wrap gap-3 lg:col-span-2">
+                        {(impact.tags || []).map((tag, index) => {
+                          const TagIcon = index === 0 ? Lock : index === 1 ? RefreshCw : index === 2 ? Database : index === 3 ? Shield : ArrowDown;
+
+                          return (
+                            <div key={tag} className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${index === 1 || index === 4 ? 'border-cyan-400/20 bg-cyan-400/8' : 'border-emerald-400/20 bg-emerald-400/8'} backdrop-blur-md text-xs font-semibold tracking-wide text-slate-200 shadow-[0_0_18px_rgba(255,255,255,0.04)]`}>
+                              <TagIcon className={`w-3.5 h-3.5 ${index === 1 || index === 4 ? 'text-cyan-300' : 'text-emerald-300'}`} />
+                              {tag}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </motion.div>
