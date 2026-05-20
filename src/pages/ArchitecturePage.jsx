@@ -9,7 +9,6 @@ import {
   nerExtraction,
   apiResponse,
   conversationEngine,
-  systemSummary,
 } from "../data/systemContent";
 
 function StepList({ steps }) {
@@ -292,37 +291,6 @@ export default function ArchitecturePage() {
                 {d.title}
               </h5>
               <p className="text-xs text-[var(--muted)] leading-relaxed">{d.text}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section
-        label={systemSummary.label}
-        title={systemSummary.title}
-        subtitle={systemSummary.subtitle}
-      >
-        <div className="pres-grid-2 mb-10 gap-6">
-          {systemSummary.cards.map((c) => (
-            <div key={c.title} className="pres-card p-5 flex gap-4 items-start">
-              <span className="text-3xl shrink-0 leading-none">{c.icon}</span>
-              <div>
-                <h4 className="font-bold text-base mb-1">{c.title}</h4>
-                <p className="text-sm text-[var(--muted)] leading-relaxed">{c.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-8 items-center justify-center pres-card p-8">
-          {systemSummary.stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div
-                className="text-4xl font-bold mb-1"
-                style={{ fontFamily: "'Bricolage Grotesque', sans-serif", color: "var(--accent)" }}
-              >
-                {s.value}
-              </div>
-              <div className="text-xs font-semibold tracking-wider uppercase text-[var(--muted)]">{s.label}</div>
             </div>
           ))}
         </div>

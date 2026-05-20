@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, X, CheckCircle2, Zap, Shield, GitBranch, TrendingDown, XCircle, AlertTriangle, SearchX, ArrowDown, ShieldAlert, Beaker, ChevronLeft, ChevronRight, Lightbulb, Info, Network, Cloud, Box, Activity, Scale, Bot, Monitor, Users, TrendingUp, BarChart2, Image as ImageIcon, Paperclip, Plus, Play, Rocket, Clock, Calendar, BellRing, Bell, Database, Lock, RefreshCw } from "lucide-react";
 import { Section } from "../components/presentation/Section";
-import { myImpact } from "../data/systemContent";
+import { myImpact, stellarSquadAward } from "../data/systemContent";
 
 const toneStyles = {
   green: { color: "var(--accent)", border: "var(--accent-dim)", bg: "var(--accent-faint)", Icon: CheckCircle2 },
@@ -161,6 +161,29 @@ const LightboxCarousel = ({ data, onClose }) => {
 export default function MyImpactPage() {
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const metricIcons = {
+    users: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    message: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
+    target: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    cloud: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5M7 21h10a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  };
+
   return (
     <div className="pres pt-20 pb-20 relative">
       <Section label={myImpact.label} title={myImpact.title} subtitle={myImpact.subtitle}>
@@ -185,6 +208,8 @@ export default function MyImpactPage() {
             </motion.div>
           ))}
         </div>
+
+
 
         {/* PROBLEMS BEFORE */}
         <div className="mb-20">
@@ -1046,6 +1071,197 @@ export default function MyImpactPage() {
             );
           })}
         </div>
+
+        {/* PREMIUM STELLAR SQUAD AWARD SHOWCASE CARD */}
+        {stellarSquadAward && (
+          <div className="space-y-12 mt-24">
+            {stellarSquadAward.sectionHeading && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="border-t border-[var(--border)] pt-16 text-center"
+              >
+                <span className="inline-block px-4 py-1.5 rounded-full bg-[var(--surface2)] text-[var(--accent)] text-sm font-bold tracking-widest uppercase mb-4 shadow-sm border border-[var(--border)]">Focus Area</span>
+                <h2 className="text-3xl md:text-4xl font-bold">{stellarSquadAward.sectionHeading}</h2>
+              </motion.div>
+            )}
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative rounded-[36px] p-[1.5px] bg-gradient-to-br from-amber-400/30 via-emerald-400/10 to-cyan-400/20 shadow-[0_40px_100px_rgba(0,0,0,0.85)] mb-12"
+            >
+              <div className="relative overflow-hidden rounded-[35px] bg-[#050505]/95 backdrop-blur-3xl p-10 flex flex-col xl:flex-row gap-10 w-full">
+                {/* BACKGROUND LIGHTING */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[35px]">
+                  {/* Left Emerald Glow */}
+                  <div className="absolute left-[-10%] top-[20%] w-[500px] h-[500px] rounded-full bg-emerald-500/10 blur-[140px]" />
+
+                  {/* Right Gold Glow */}
+                  <div className="absolute right-[-10%] top-[10%] w-[420px] h-[420px] rounded-full bg-amber-400/10 blur-[120px]" />
+
+                  {/* Bottom Ambient Glow */}
+                  <div className="absolute bottom-[-20%] left-[30%] w-[700px] h-[300px] rounded-full bg-emerald-400/5 blur-[120px]" />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-emerald-400/[0.02]" />
+
+                  {/* GLOBAL GRID BACKGROUND OVERLAY */}
+                  <div className="absolute inset-0 opacity-[0.06]">
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        backgroundImage: `
+                          linear-gradient(rgba(0,255,140,0.12) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(0,255,140,0.12) 1px, transparent 1px)
+                        `,
+                        backgroundSize: "60px 60px",
+                      }}
+                    />
+                  </div>
+
+                  {/* NOISE TEXTURE */}
+                  <div
+                    className="absolute inset-0 opacity-[0.03] mix-blend-soft-light pointer-events-none"
+                    style={{
+                      backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')",
+                    }}
+                  />
+                </div>
+
+                {/* LEFT SIDE (60%) */}
+                <div className="w-full xl:w-[60%] flex flex-col justify-between z-10 space-y-8">
+                  <div>
+                    {/* TOP BADGE */}
+                    <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/5 px-4 py-2 text-xs font-bold text-amber-300 tracking-widest uppercase">
+                      <span className="text-sm">🏆</span> {stellarSquadAward.badge}
+                    </div>
+
+                    {/* MAIN HEADING WITH LAUREL WREATH */}
+                    <div className="mt-6 flex flex-wrap items-center gap-4">
+                      <h2 className="text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                        {stellarSquadAward.title} <br />
+                        <span className="bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-400 bg-clip-text text-transparent">
+                          {stellarSquadAward.titleAccent}
+                        </span>
+                      </h2>
+                      
+                      {/* Custom SVG Laurel Wreath with Star */}
+                      <div className="w-16 h-16 flex items-center justify-center bg-amber-400/10 rounded-full border border-amber-400/30 shadow-[0_0_20px_rgba(245,158,11,0.2)] animate-pulse">
+                        <svg className="w-10 h-10 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          {/* Laurel Wreath Left */}
+                          <path d="M6 5C5.5 7 5.5 11 7 14C8 16 10 18 12 19" strokeLinecap="round" stroke="currentColor" />
+                          <path d="M4.5 8C4.5 8 5.5 9 6.5 8" strokeLinecap="round" stroke="currentColor" />
+                          <path d="M4 11C4 11 5 11.5 6 11" strokeLinecap="round" stroke="currentColor" />
+                          <path d="M4.5 14C4.5 14 5.5 14 6 13.5" strokeLinecap="round" stroke="currentColor" />
+                          
+                          {/* Laurel Wreath Right */}
+                          <path d="M18 5C18.5 7 18.5 11 17 14C16 16 14 18 12 19" strokeLinecap="round" stroke="currentColor" />
+                          <path d="M19.5 8C19.5 8 18.5 9 17.5 8" strokeLinecap="round" stroke="currentColor" />
+                          <path d="M20 11C20 11 19 11.5 18 11" strokeLinecap="round" stroke="currentColor" />
+                          <path d="M19.5 14C19.5 14 18.5 14 18 13.5" strokeLinecap="round" stroke="currentColor" />
+
+                          {/* Star in Center */}
+                          <path d="M12 7.5L13.2 10.2L16.2 10.4L13.9 12.3L14.6 15.2L12 13.6L9.4 15.2L10.1 12.3L7.8 10.4L10.8 10.2L12 7.5Z" fill="currentColor" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* DESCRIPTION */}
+                    <p className="mt-6 max-w-[650px] text-lg text-zinc-400 leading-8">
+                      {stellarSquadAward.description}
+                    </p>
+                  </div>
+
+                  {/* METRICS - 4 horizontal cards side-by-side */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+                    {stellarSquadAward.metrics.map((item, idx) => (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: idx * 0.1, duration: 0.5 }}
+                        whileHover={{ y: -6, scale: 1.02 }}
+                        className="relative overflow-hidden rounded-[24px] border border-emerald-400/10 bg-gradient-to-br from-emerald-400/[0.06] to-transparent p-5 backdrop-blur-xl shadow-[0_0_40px_rgba(16,185,129,0.08)] flex flex-col items-center justify-between min-h-[140px] transition-all duration-300"
+                      >
+                        {/* TOP LIGHT */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
+
+                        {/* ICON GLOW */}
+                        <div className="absolute -top-10 right-[-20px] w-[100px] h-[100px] rounded-full bg-emerald-400/10 blur-3xl pointer-events-none" />
+
+                        {/* CONTENT */}
+                        <div className="relative z-10 w-full flex flex-col items-center justify-between h-full">
+                          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
+                            {metricIcons[item.icon] || metricIcons.target}
+                          </div>
+                          <div>
+                            <div className="text-2xl font-black text-emerald-400 tracking-tight" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                              {item.value}
+                            </div>
+                            <div className="text-[10px] text-zinc-400 font-semibold tracking-wider uppercase mt-1 leading-tight">
+                              {item.label}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* MIDDLE DIVIDER WITH GLOWING DOT */}
+                <div className="hidden xl:flex items-center justify-center py-4 relative z-10">
+                  <div className="w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent relative">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.8)] border border-black" />
+                  </div>
+                </div>
+
+                {/* RIGHT SIDE (40%) - Elevated Floating Certificate Preview */}
+                <div className="w-full xl:w-[40%] flex items-center justify-center z-10 mt-8 xl:mt-0">
+                  <motion.div
+                    whileHover={{ scale: 1.03, rotateY: -2, rotateX: 2 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="relative cursor-zoom-in max-w-md w-full"
+                    onClick={() => setSelectedImage({
+                      images: [stellarSquadAward.certificatePath],
+                      captions: [`${stellarSquadAward.title} ${stellarSquadAward.titleAccent} Certificate`],
+                      initialIndex: 0,
+                      title: `${stellarSquadAward.title} ${stellarSquadAward.titleAccent}`
+                    })}
+                  >
+                    {/* OUTER GLOW */}
+                    <div className="absolute inset-0 rounded-[32px] bg-amber-400/20 blur-3xl opacity-70 pointer-events-none" />
+
+                    {/* FRAME */}
+                    <div className="relative rounded-[32px] border border-white/10 bg-white/[0.04] p-5 shadow-[0_0_60px_rgba(251,191,36,0.15)] backdrop-blur-xl overflow-hidden">
+                      
+                      {/* INNER LIGHT */}
+                      <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-white/[0.06] to-transparent pointer-events-none" />
+
+                      {/* Certificate Image */}
+                      <div className="relative overflow-hidden rounded-[20px] border border-white/10 shadow-2xl aspect-[4/3] bg-zinc-950 flex items-center justify-center">
+                        <img
+                          src={stellarSquadAward.certificatePath}
+                          alt={`${stellarSquadAward.title} ${stellarSquadAward.titleAccent}`}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Small floating tag */}
+                    <div className="absolute -bottom-3 -right-3 bg-zinc-900 border border-white/10 text-white text-[10px] font-mono py-1 px-3 rounded-full shadow-lg flex items-center gap-1.5 z-20">
+                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                      <span>Click to view Certificate</span>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
 
       </Section>
 

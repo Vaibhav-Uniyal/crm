@@ -307,46 +307,6 @@ export const conversationEngine = {
   ],
 };
 
-export const systemSummary = {
-  label: "Summary",
-  title: "What we've built",
-  subtitle:
-    "A fully automated, AI-powered CRM email processing system with enterprise-grade reliability, dual-model validation, and multi-turn dialogue awareness.",
-  cards: [
-    {
-      icon: "⚡",
-      tone: "green",
-      title: "Kafka + Salesforce ingestion",
-      text: "Cases are pushed in real-time from Salesforce via Kafka — scalable, ordered, and replay-capable. No polling lag.",
-    },
-    {
-      icon: "🤖",
-      tone: "purple",
-      title: "GPT + Gemini dual classification",
-      text: "Two independent AI models must agree on the subcategory before any ticket is processed — reducing misclassification.",
-    },
-    {
-      icon: "🔍",
-      tone: "blue",
-      title: "Automated NER & API resolution",
-      text: "User identifiers are extracted, cleaned, and used to fetch full CRM data — then module APIs are hit automatically.",
-    },
-    {
-      icon: "💬",
-      tone: "amber",
-      title: "5-turn conversation engine",
-      text: "Context is tracked across up to 5 email turns per ticket, with intelligent escalation, closure, and template follow-ups.",
-    },
-  ],
-  stats: [
-    { value: "6", label: "Pipeline stages" },
-    { value: "2", label: "AI models" },
-    { value: "5", label: "Convo turns tracked" },
-    { value: "0", label: "Manual steps (best case)" },
-    { value: "100%", label: "PII masked" },
-  ],
-};
-
 export const myImpact = {
   label: "My contribution",
   title: "Impact, Testing & Outcomes",
@@ -485,7 +445,7 @@ export const myImpact = {
         { text: "Execute Flow", icon: "play" }
       ]
     },
-        {
+    {
       layout: "platform_security",
       metricLabel: "Platform Security",
       title: "Azure Key Vault & Dynamic Runtime Configs",
@@ -536,3 +496,38 @@ export const myImpact = {
     },
   ],
 };
+
+export const stellarSquadAward = {
+  sectionHeading: "Achievements", 
+  layout: "stellar_squad_award",
+  badge: "RECOGNITION & ACHIEVEMENTS",
+  title: "Stellar Squad",
+  titleAccent: "Award",
+  description:
+    "Recognized for driving impactful enterprise-scale customer service automation initiatives across BFHL and Vidal through AI-powered workflow optimization and operational transformation.",
+  metrics: [
+    {
+      value: "50%+",
+      label: "Headcount Reduction",
+      icon: "users",
+    },
+    {
+      value: "68%",
+      label: "Auto-answer Rate",
+      icon: "message",
+    },
+    {
+      value: "94%",
+      label: "Automation Accuracy",
+      icon: "target",
+    },
+    {
+      value: "100+",
+      label: "SFDC IDs Transitioned",
+      icon: "cloud",
+    },
+  ],
+  insight: "Awarded for collaboration, execution speed, automation impact, and successful large-scale AI workflow deployment.",
+  certificatePath: "/assets/metrices/Stellar_Squad_Award.png",
+};
+
