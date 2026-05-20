@@ -504,7 +504,7 @@ export const stellarSquadAward = {
   title: "Stellar Squad",
   titleAccent: "Award",
   description:
-    "Recognized for driving impactful enterprise-scale customer service automation initiatives across BFHL and Vidal through AI-powered workflow optimization and operational transformation.",
+    "Recognized for driving impactful enterprise-scale customer service automation initiatives across Vidal through AI-powered workflow optimization and operational transformation.",
   metrics: [
     {
       value: "50%+",
